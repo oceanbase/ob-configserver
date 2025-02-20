@@ -20,7 +20,7 @@ set-release-flags:
 	$(eval LDFLAGS += $(LDFLAGS_RELEASE))
 
 configserver:
-	$(GOBUILD) $(GO_RACE_FLAG) -ldflags '$(OB_CONFIGSERVER_LDFLAGS)' -o bin/ob-configserver cmd/main.go
+	$(GOBUILD) -ldflags '$(OB_CONFIGSERVER_LDFLAGS)' -o bin/ob-configserver cmd/main.go
 
 test:
 	$(GOTEST) $(GOTEST_PACKAGES)

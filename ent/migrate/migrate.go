@@ -28,9 +28,6 @@ var (
 	// and therefore, it's recommended to enable this option to get more
 	// flexibility in the schema changes.
 	WithDropIndex = schema.WithDropIndex
-	// WithFixture sets the foreign-key renaming option to the migration when upgrading
-	// ent from v0.1.0 (issue-#285). Defaults to false.
-	WithFixture = schema.WithFixture
 	// WithForeignKeys enables creating foreign-key in schema DDL. This defaults to true.
 	WithForeignKeys = schema.WithForeignKeys
 )
@@ -54,10 +51,9 @@ func (s *Schema) Create(ctx context.Context, opts ...schema.MigrateOption) error
 
 // WriteTo writes the schema changes to w instead of running them against the database.
 //
-// 	if err := client.Schema.WriteTo(context.Background(), os.Stdout); err != nil {
+//	if err := client.Schema.WriteTo(context.Background(), os.Stdout); err != nil {
 //		log.Fatal(err)
-// 	}
-//
+//	}
 func (s *Schema) WriteTo(ctx context.Context, w io.Writer, opts ...schema.MigrateOption) error {
 	drv := &schema.WriteDriver{
 		Writer: w,

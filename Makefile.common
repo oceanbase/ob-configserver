@@ -11,7 +11,6 @@ GOCOVERAGE_FILE := tests/coverage.out
 GOCOVERAGE_REPORT := tests/coverage-report
 GOTEST          := OB_CONFIGSERVER_CONFIG_PATH=$(PWD) $(GO) test -tags test -covermode=count -coverprofile=$(GOCOVERAGE_FILE) -p $(PROCESSOR)
 
-GO_RACE_FLAG =-race
 LDFLAGS += -X "github.com/oceanbase/configserver/config.Version=${VERSION}"
 LDFLAGS += -X "github.com/oceanbase/configserver/config.BuildTimestamp=$(shell date -u '+%Y-%m-%d %H:%M:%S')"
 LDFLAGS += -X "github.com/oceanbase/configserver/config.GitBranch=$(shell git rev-parse --abbrev-ref HEAD)"
