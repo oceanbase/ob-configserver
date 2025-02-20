@@ -1,10 +1,10 @@
 Name: ob-configserver
 Summary: configserver for oceanbase database
 Group: alipay/oceanbase
-Version: 1.0.0
+Version: 1.0.1
 Release: %(echo $RELEASE)%{?dist}
-URL: https://github.com/oceanbase/oceanbase
-License: MulanPSL - 2.0
+URL: https://github.com/oceanbase/ob-configserver
+License: Apache 2.0
 BuildArch: x86_64 aarch64
 
 %description
